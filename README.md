@@ -1,36 +1,84 @@
-CowrieMLProje — Cowrie honeypot loglarını makine öğrenmesi ile analiz eden proje.Proje Hakkında
+# CowrieMLProje
 
-Bu proje, Cowrie honeypot tarafından toplanan saldırı loglarını işleyip makine öğrenmesi yöntemleriyle analiz ederek anomali tespiti yapmayı amaçlar. ELK stack ile entegrasyon ve veri görselleştirmesi de içerir.
+## Proje Hakkında
 
-Kurulum
+CowrieMLProje, Cowrie honeypot tarafından toplanan siber saldırı loglarının makine öğrenmesi teknikleri kullanılarak analiz edilmesini ve anomali tespitinin otomatikleştirilmesini amaçlayan kapsamlı bir projedir. Projede, saldırı verileri ELK (Elasticsearch, Logstash, Kibana) stack ile görselleştirilirken, Python tabanlı makine öğrenmesi modelleri kullanılarak anormal davranışlar tespit edilmektedir.
 
-    Python 3.8+ yüklü olmalı.
+Bu sayede siber güvenlik analistleri, büyük veri setleri içerisinden anlamlı sonuçlar çıkarabilir ve saldırılara hızlı müdahale edebilir.
 
-    Sanal ortam oluştur:
+---
 
+## Özellikler
+
+- **Cowrie Loglarının Toplanması:** Cowrie honeypot tarafından oluşturulan JSON formatındaki log dosyalarının otomatik olarak işlenmesi.  
+- **Veri Ön İşleme:** Log verilerinden gereksiz bilgiler temizlenir, uygun formatlara dönüştürülür.  
+- **Makine Öğrenmesi ile Anomali Tespiti:** Isolation Forest, K-Means gibi modellerle saldırıların normal davranışlardan ayrıştırılması.  
+- **ELK Stack Entegrasyonu:** Analiz sonuçlarının Elasticsearch’e aktarılması ve Kibana ile detaylı görselleştirme yapılması.  
+- **Kullanıcı Dostu:** Kolay kurulum ve kullanım için Python sanal ortamı ve requirements dosyasıyla desteklenmiş.  
+- **Genişletilebilir:** Yeni modeller ve görselleştirme teknikleri eklemeye uygundur.
+
+---
+
+## Teknolojiler
+
+| Teknoloji       | Açıklama                           |
+|-----------------|----------------------------------|
+| Python 3.8+     | Veri işleme ve makine öğrenmesi  |
+| scikit-learn    | Makine öğrenmesi modelleri       |
+| pandas, numpy   | Veri manipülasyonu               |
+| Elasticsearch   | Veri depolama ve arama motoru   |
+| Logstash        | Veri toplama ve işlem hattı      |
+| Kibana          | Veri görselleştirme              |
+| Cowrie Honeypot | Saldırı loglarının kaynağı       |
+
+---
+
+## Sistem Gereksinimleri
+
+- Python 3.8 veya üzeri  
+- Git  
+- Cowrie honeypot kurulu ve log dosyalarının erişilebilir olması  
+- ELK Stack kurulumu (Elasticsearch, Logstash, Kibana)  
+- İnternet bağlantısı (kütüphane kurulumları için)  
+
+---
+
+## Kurulum ve Başlangıç
+
+1. **Projeyi Klonla veya İndir**  
+```bash
+git clone https://github.com/kullaniciadi/CowrieMLProje.git
+cd CowrieMLProje
+```
+2. **Sanal Ortam Oluştur ve Aktif Et**  
+```bash
 python3 -m venv mlenv
-source mlenv/bin/activate  # Linux/macOS  
-mlenv\Scripts\activate     # Windows
-
-    Gerekli kütüphaneleri yükle:
-
+source mlenv/bin/activate      # Linux/macOS
+mlenv\Scripts\activate         # Windows
+```
+3. **Gerekli Kütüphaneleri Yükle**
+```
 pip install -r requirements.txt
+```
+4. **Cowrie Log Dosyasını Yerleştir**
+Log dosyası /home/cowrie/cowrie/var/log/cowrie/cowrie.json veya config dosyasında belirtilen yolda olmalıdır.
 
-    Cowrie log dosyası /home/cowrie/cowrie/var/log/cowrie/cowrie.json konumunda olmalı.
+5. **Analizi Başlat**
+```
+python analyze.py
+python data_preprocessing.py
+python encoding.py
+python feature_engineering.py
+python anomaly_detection.py
+python save_anomalies.py
+python visualization.py
+```
 
-    Kullanım
-
-python main.py
-
-    Program Cowrie loglarını okuyup makine öğrenmesi analizi yapacak.
-
-    Sonuçlar ELK stack üzerinde gösterilecek.
-
-Özellikler
-
-    Cowrie loglarından veri temizleme ve ön işleme
-
-    Anomali tespiti için makine öğrenmesi modelleri (ör. Isolation Forest)
-
-    Sonuçların Elasticsearch ve Kibana ile görselleştirilmesi
-
+## Proje Mimari Şeması
+```mermaid
+graph TD
+    A[Cowrie Honeypot Logları] --> B[Veri Ön İşleme Python]
+    B --> C[Makine Öğrenmesi Modelleri Isolation Forest]
+    C --> D[Sonuçların Elasticsearch Aktarımı]
+    D --> E[Kibana ile Görselleştirme]
+```
