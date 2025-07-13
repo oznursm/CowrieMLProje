@@ -82,9 +82,12 @@ graph TD
     C --> D[Sonuçların Elasticsearch Aktarımı]
     D --> E[Kibana ile Görselleştirme]
 ```
-İletişim
+## İletişim
 
 Herhangi bir soru veya öneri için:
+
 Öznur Siram
+
 GitHub: https://github.com/oznursm
+
 LinkedIn: https://www.linkedin.com/oznursm
