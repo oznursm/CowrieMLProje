@@ -4,8 +4,6 @@ timestamp,username,password,src_ip,eventid,username_enc,password_enc,src_ip_enc,
 2025-07-04 21:42:45.909,root,4321,127.0.0.1,cowrie.login.failed,0,7,0,0,21,182,1,-1
 2025-07-04 21:42:19.886,root,denemepassword,127.0.0.1,cowrie.login.failed,0,17,0,0,21,182,1,-1
 2025-06-25 12:56:57.015,root,1234,127.0.0.1,cowrie.login.failed,0,2,0,0,12,182,89,-1
-2025-06-25 02:14:46.291,root,CAMASIRLARI_YIKA_MORUK,127.0.0.1,cowrie.login.failed,0,9,0,0,2,182,1,-1
-2025-06-25 02:14:24.105,root,camasırları_yıka_moruk,127.0.0.1,cowrie.login.failed,0,16,0,0,2,182,1,-1
 2025-06-24 17:51:33.284,root,yanlıs,127.0.0.1,cowrie.login.failed,0,24,0,0,17,182,3,-1
 2025-06-24 17:51:33.284,root,yanlıs,127.0.0.1,cowrie.login.failed,0,24,0,0,17,182,3,-1
 2025-06-24 17:51:33.284,root,yanlıs,127.0.0.1,cowrie.login.failed,0,24,0,0,17,182,3,-1
